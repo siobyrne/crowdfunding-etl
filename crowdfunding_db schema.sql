@@ -1,6 +1,6 @@
 -- Create contacts table
 
-CREATE TABLE contacts (
+CREATE TABLE IF NOT EXISTS contacts (
 	contact_id INT,
 	first_name VARCHAR,
 	last_name VARCHAR,
@@ -10,7 +10,7 @@ CREATE TABLE contacts (
 
 -- Create category table
 
-CREATE TABLE category (
+CREATE TABLE IF NOT EXISTS category (
 	category_id VARCHAR,
 	category VARCHAR,
 	PRIMARY KEY (category_id)
@@ -18,7 +18,7 @@ CREATE TABLE category (
 
 -- Create subcategory table
 
-CREATE TABLE subcategory (
+CREATE TABLE IF NOT EXISTS subcategory (
 	subcategory_id VARCHAR,
 	subcategory VARCHAR,
 	PRIMARY KEY (subcategory_id)
@@ -26,7 +26,7 @@ CREATE TABLE subcategory (
 
 -- Create campaign table
 
-CREATE TABLE campaign (
+CREATE TABLE IF NOT EXISTS campaign (
 	cf_id INT,
 	contact_id INT,
 	company_name VARCHAR,
@@ -46,3 +46,11 @@ CREATE TABLE campaign (
 	FOREIGN KEY(contact_id) REFERENCES contacts (contact_id),
 	PRIMARY KEY (cf_id)
 );
+
+select * from contacts;
+
+select * from category;
+
+select * from subcategory;
+
+Select * from campaign;
